@@ -1,0 +1,242 @@
+body { margin: 0; color: #fff; background: #000; overflow: hidden; }
+
+.download { padding:20% 0 0; text-align:center; font: 24px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif; }
+.download a { color: #fff; }
+.download a:hover, .download a:focus { color: #ccc; }
+
+audio { visibility: hidden; }
+
+#header h1, #apple div.icon { color: transparent; }
+#apple, #header, #safari { position: absolute; top: 40%; left: 50%; }
+
+#apple { width: 600px; height: 538px; margin: -290px 0 0 -290px; overflow: hidden; }
+#apple div { position: absolute; width: 600px; height: 538px; opacity: 0; filter: alpha(opacity=0); }
+#apple div.icon { z-index: 3; background: url(apple_icon.png) no-repeat 233px 184px; }
+#apple div.spots { z-index: 4; background: url(apple_spots.png) no-repeat 195px 133px; }
+#apple div.flare { z-index: 1; background: url(apple_flare.jpg) no-repeat 0 0; }
+#apple div.flareicon { z-index: 5; background: url(apple_flare_icon.png) no-repeat 233px 184px; }
+
+#header { width: 600px; height: 60px; margin: -43px 0 0 -300px; opacity: 0; filter: alpha(opacity=0); }
+#header h1 { width: 100%; height: 100%; margin: 0; background: url(header.jpg) no-repeat 0 0;
+	-webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(rgba(255, 255, 255, 0.4)));
+}
+
+#safari div { width: 256px; height: 256px; margin: -158px 0 0 -128px; }
+#safari video,
+#safari img { width: 256px; height: 256px; opacity: 0; filter: alpha(opacity=0); }
+
+#compass {
+	-webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, 0.4)));
+}
+
+/*------------------------
+  animations
+------------------------*/
+
+/* apple keyframes */
+@-webkit-keyframes apple-icon {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(3);
+		-webkit-animation-timing-function: ease-out;
+	}
+	22% {
+		opacity: 1;
+		-webkit-transform: scale(1.1);
+		-webkit-animation-timing-function: linear;
+	}
+	30% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-webkit-animation-timing-function: linear;
+	}
+	82% {
+		opacity: 1;
+		-webkit-transform: scale(0.92);
+		-webkit-animation-timing-function: ease-out;
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(0.2);
+		-webkit-animation-timing-function: ease-in;
+	}
+}
+@-webkit-keyframes apple-spots {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.2);
+		-webkit-animation-timing-function: ease-out;
+	}
+	22% {
+		opacity: 0;
+		-webkit-transform: scale(0.2);
+		-webkit-animation-timing-function: ease-out;
+	}
+	30% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-webkit-animation-timing-function: ease-in;
+	}
+	82% {
+		opacity: 1;
+		-webkit-transform: scale(0.92) rotate(10deg);
+		-webkit-animation-timing-function: ease-out;
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(0.2);
+		-webkit-animation-timing-function: ease-in;
+	}
+}
+@-webkit-keyframes apple-flare {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.2);
+		-webkit-animation-timing-function: ease-out;
+	}
+	22% {
+		opacity: 0;
+		-webkit-transform: scale(0.2) translateX(-20px) translateY(-100px);
+		-webkit-animation-timing-function: ease-out;
+	}
+	30% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-webkit-animation-timing-function: linear;
+	}
+	82% {
+		opacity: 1;
+		-webkit-transform: scale(0.92);
+		-webkit-animation-timing-function: ease-out;
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(0.2);
+		-webkit-animation-timing-function: ease-in;
+	}
+}
+@-webkit-keyframes apple-flareicon {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(3);
+		-webkit-animation-timing-function: ease-out;
+	}
+	22% {
+		opacity: 0;
+		-webkit-transform: scale(1.1);
+		-webkit-animation-timing-function: linear;
+	}
+	30% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-webkit-animation-timing-function: linear;
+	}
+	82% {
+		opacity: 1;
+		-webkit-transform: scale(0.92);
+		-webkit-animation-timing-function: ease-out;
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(0.2);
+		-webkit-animation-timing-function: ease-in;
+	}
+}
+
+/* text keyframes */
+@-webkit-keyframes header {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(2.6);
+		-webkit-animation-timing-function: linear;
+	}
+	20% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-webkit-animation-timing-function: linear;
+	}
+	77% {
+		opacity: 1;
+		-webkit-transform: scale(0.9);
+		-webkit-animation-timing-function: linear;
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-webkit-animation-timing-function: linear;
+	}
+}
+
+/* safari keyframes */
+@-webkit-keyframes safari {
+	from {
+		-webkit-transform: scale(1.2);
+		-webkit-animation-timing-function: linear;
+	}
+	20% {
+		-webkit-transform: scale(0.8);
+		-webkit-animation-timing-function: linear;
+	}
+	84% {
+		-webkit-transform: scale(0.6);
+		-webkit-animation-timing-function: linear;
+	}
+	to {
+		-webkit-transform: scale(0.2);
+		-webkit-animation-timing-function: linear;
+	}
+}
+@-webkit-keyframes safari-video {
+	from {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	84% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+/* apple timing */
+body.go #apple div {
+	-webkit-animation-delay: 0.5s;
+	-webkit-animation-duration: 1.7s;
+}
+body.go #apple div.icon {
+	-webkit-animation-name: apple-icon;
+}
+body.go #apple div.spots {
+	-webkit-animation-name: apple-spots;
+}
+body.go #apple div.flare {
+	-webkit-animation-name: apple-flare;
+}
+body.go #apple div.flareicon {
+	-webkit-animation-name: apple-flareicon;
+}
+
+/* text timing */
+body.go #header {
+	-webkit-animation-delay: 2.2s;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-name: header;
+}
+
+/* safari timing */
+body.go #safari div,
+body.go #safari video,
+body.go #safari img {
+	-webkit-animation-delay: 3.7s;
+	-webkit-animation-duration: 1.9s;
+}
+body.go #safari div {
+	-webkit-animation-name: safari;
+}
+body.go #safari video,
+body.go #safari img {
+	-webkit-animation-name: safari-video;
+}
